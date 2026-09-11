@@ -21,6 +21,12 @@
             "value" : ""
           }
         },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "new",
@@ -146,6 +152,12 @@
           }
         },
         "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@"
+          }
+        },
+        "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%@"
@@ -294,6 +306,12 @@
             "value" : "%@%%"
           }
         },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@%%"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -425,6 +443,12 @@
           }
         },
         "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld%%"
+          }
+        },
+        "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%lld%%"
@@ -573,6 +597,12 @@
             "value" : "Activate and finish warming up a new sensor with another app or physical reader."
           }
         },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Activate and finish warming up a new sensor with another app or physical reader."
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -710,6 +740,12 @@
           }
         },
         "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Active from - to "
+          }
+        },
+        "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Active from - to "
@@ -858,6 +894,12 @@
             "value" : "Weitere Benachrichtigungseinstellungen"
           }
         },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Additional notification types"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -999,6 +1041,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Fügt dem Problembericht viele Daten hinzu "
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adds a lot of data to the Issue Report "
           }
         },
         "es" : {
@@ -1143,6 +1191,12 @@
             "value" : "Transmitter-Batteriestand hinzufügen"
           }
         },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adds Transmitter Battery"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1280,6 +1334,12 @@
           }
         },
         "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alarm Settings"
+          }
+        },
+        "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Alarm Settings"
@@ -1426,6 +1486,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Blutzuckerwert immer mitteilen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Always Notify Glucose"
           }
         },
         "es" : {
@@ -1727,6 +1793,12 @@
             "value" : "Are you sure you want to remove this cgm from loop?"
           }
         },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Are you sure you want to remove this cgm from loop?"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1868,6 +1940,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Authentifizieren"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Authenticate"
           }
         },
         "es" : {
@@ -2013,6 +2091,12 @@
             "value" : "Authentifiziert"
           }
         },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Authenticated"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2153,6 +2237,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Auffüllen aus dem Verlauf"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Backfill from history"
           }
         },
         "es" : {
@@ -2298,6 +2388,12 @@
             "value" : "Auffüllen-Optionen"
           }
         },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Backfill options"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2439,6 +2535,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bluetooth Sender"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bluetooth Transmitters"
           }
         },
         "es" : {
@@ -2583,6 +2685,12 @@
             "value" : "Calibration Details"
           }
         },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Calibration Details"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2720,6 +2828,12 @@
           }
         },
         "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Calibration Edit"
+          }
+        },
+        "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Calibration Edit"
@@ -2872,6 +2986,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Abbrechen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancel"
           }
         },
         "es" : {
@@ -3029,6 +3149,12 @@
             "value" : "Klicken, um Warnungen temporär abzuschalten"
           }
         },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Click to Snooze Alerts"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3172,6 +3298,12 @@
             "value" : "Konfiguration"
           }
         },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Configuration"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3307,6 +3439,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Verbindungsoptionen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Connection options"
           }
         },
         "es" : {
@@ -3607,6 +3745,12 @@
             "value" : "Kritische Alarmlautstärke"
           }
         },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Critical alarm volume"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3744,6 +3888,12 @@
           }
         },
         "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Critical alarms will always be sent with volume at minimum 60%"
+          }
+        },
+        "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Critical alarms will always be sent with volume at minimum 60%"
@@ -4048,6 +4198,12 @@
             "value" : "Tag"
           }
         },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "day"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4189,6 +4345,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tage"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "days"
           }
         },
         "es" : {
@@ -4334,6 +4496,12 @@
             "value" : "Debug-Optionen"
           }
         },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Debug options"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4477,6 +4645,12 @@
             "value" : "Löschen"
           }
         },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4618,6 +4792,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "CGM löschen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete CGM"
           }
         },
         "es" : {
@@ -4769,6 +4949,12 @@
             "value" : "Geräteinformationen"
           }
         },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Device Info"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4907,6 +5093,12 @@
           }
         },
         "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Disconnect & Continue Setup"
+          }
+        },
+        "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Disconnect & Continue Setup"
@@ -5055,6 +5247,12 @@
             "value" : "Disconnect and unpair any other app or device communicating with the sensor via bluetooth."
           }
         },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Disconnect and unpair any other app or device communicating with the sensor via bluetooth."
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5197,6 +5395,12 @@
             "value" : "Fertig"
           }
         },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Done"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5331,6 +5535,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kalibrierung bearbeiten"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Edit calibrations"
           }
         },
         "es" : {
@@ -5476,6 +5686,12 @@
             "value" : "Eine Warnung: Der Sensor verwendet nicht den Algorithmus des Herstellers, und einige Sicherheitsvorkehrungen, die im Algorithmus des Herstellers enthalten sind, könnten fehlen, wenn Sie diesen verwenden."
           }
         },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fair warning: The sensor will be not be using the manufacturer's algorithm, and some safety mitigations present in the manufacturers algorithm might be missing when you use this."
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5619,6 +5835,12 @@
             "value" : "Gefundene Geräte:"
           }
         },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Found devices:"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5757,6 +5979,12 @@
           }
         },
         "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "g"
+          }
+        },
+        "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "g"
@@ -6073,6 +6301,12 @@
             "value" : "Einstellungen Glukosebenachrichtigungen"
           }
         },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Glucose Notification visibility"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6215,6 +6449,12 @@
             "value" : "Blutzuckereinstellungen"
           }
         },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Glucose Settings"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6355,6 +6595,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Habe es!"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Got it!"
           }
         },
         "es" : {
@@ -6500,6 +6746,12 @@
             "value" : "Hoch"
           }
         },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "High"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6641,6 +6893,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Stunde"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "hour"
           }
         },
         "es" : {
@@ -6786,6 +7044,12 @@
             "value" : "Stunden"
           }
         },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "hours"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6928,6 +7192,12 @@
             "value" : "Ungültiger Sensor"
           }
         },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Invalid sensor"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7066,6 +7336,12 @@
           }
         },
         "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keep phone unlocked and your Loop app in the foreground."
+          }
+        },
+        "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Keep phone unlocked and your Loop app in the foreground."
@@ -7214,6 +7490,12 @@
             "value" : "Letzte Blutzuckervorhersage"
           }
         },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Last Blood Sugar prediction"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7355,6 +7637,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Letzter Wert"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Last measurement"
           }
         },
         "es" : {
@@ -7656,6 +7944,12 @@
             "value" : "Libre 2 Direct"
           }
         },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Libre 2 Direct"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7793,6 +8087,12 @@
           }
         },
         "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Libre 2 Setup"
+          }
+        },
+        "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Libre 2 Setup"
@@ -7941,6 +8241,12 @@
             "value" : "Libre Transmitter"
           }
         },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Libre Transmitters"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8082,6 +8388,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Niedrig"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Low"
           }
         },
         "es" : {
@@ -8226,6 +8538,12 @@
             "value" : "Batterie schwach"
           }
         },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Low battery"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8364,6 +8682,12 @@
           }
         },
         "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mg/dL"
+          }
+        },
+        "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "mg/dL"
@@ -8512,6 +8836,12 @@
             "value" : "Minute"
           }
         },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "minute"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8655,6 +8985,12 @@
             "value" : "Minuten"
           }
         },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "minutes"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8793,6 +9129,12 @@
           }
         },
         "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mmol/L"
+          }
+        },
+        "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "mmol/L"
@@ -8941,6 +9283,12 @@
             "value" : "Most libre 1 and libre 2 sensors are supported, except North America Libre 2; see readme.md for details."
           }
         },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Most libre 1 and libre 2 sensors are supported, except North America Libre 2; see readme.md for details."
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9078,6 +9426,12 @@
           }
         },
         "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "New Device Setup"
+          }
+        },
+        "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "New Device Setup"
@@ -9226,6 +9580,12 @@
             "value" : "Keine Verbindung: "
           }
         },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No Connection: "
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9363,6 +9723,12 @@
           }
         },
         "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notification"
+          }
+        },
+        "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Notification"
@@ -9509,6 +9875,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Benachrichtigung pro Messwert"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notify per reading"
           }
         },
         "es" : {
@@ -9810,6 +10182,12 @@
             "value" : "Sensor Koppeln"
           }
         },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pair Sensor"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9951,6 +10329,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Koppeln…"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pairing..."
           }
         },
         "es" : {
@@ -10252,6 +10636,12 @@
             "value" : "Glukosealarme pausieren"
           }
         },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pause Glucose alarms"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10394,6 +10784,12 @@
             "value" : "Sensordaten beibehalten"
           }
         },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Persist sensordata"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10532,6 +10928,12 @@
           }
         },
         "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Press the Authenticate Button."
+          }
+        },
+        "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Press the Authenticate Button."
@@ -10680,6 +11082,12 @@
             "value" : "Fahre mit dem nächsten Bildschirmen mit dem Koppeln des neuen Sensors fort. Beachte, dass die Verbindung zu einem vorhandenen Sensor oder Sender verloren geht"
           }
         },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Proceed to pair new sensor in the next screens. Note that you will loose connection to any existing sensor or transmitter"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10818,6 +11226,12 @@
           }
         },
         "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Remote data storage"
+          }
+        },
+        "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Remote data storage"
@@ -10965,6 +11379,12 @@
             "value" : "Ersetze den Sensor sofort um weiter Glukosewerte zu erhalten"
           }
         },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Replace sensor immediately to continue receving glucose values"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -11108,6 +11528,12 @@
             "value" : "Speichern"
           }
         },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Save"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -11243,6 +11669,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Geplant "
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schedule "
           }
         },
         "es" : {
@@ -11388,6 +11820,12 @@
             "value" : "Wählen Sie den externen Sender, den Sie verbinden möchten"
           }
         },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select the third party transmitter you want to connect to"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -11439,7 +11877,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Selecteer de zender van de derde partij waarmee u wilt verbinden"
+            "value" : "Selecteer de zender van de derde partij waarmee je wilt verbinden"
           }
         },
         "pl" : {
@@ -11526,6 +11964,12 @@
           }
         },
         "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select the type of setup you want."
+          }
+        },
+        "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Select the type of setup you want."
@@ -11673,6 +12117,12 @@
             "value" : "Sensor wechseln"
           }
         },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sensor change"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -11814,6 +12264,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sensor läuft ab in"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sensor expires in "
           }
         },
         "es" : {
@@ -11958,6 +12414,12 @@
             "value" : "Sensor läuft bald ab"
           }
         },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sensor expires soon"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -12100,6 +12562,12 @@
             "value" : "Sensor abgelaufen"
           }
         },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sensor is expired"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -12240,6 +12708,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sensor nicht gefunden"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sensor not found"
           }
         },
         "es" : {
@@ -12385,6 +12859,12 @@
             "value" : "Sensor Seriennummer"
           }
         },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sensor Serial"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -12523,6 +13003,12 @@
           }
         },
         "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sensor should be activated and fully warmed up."
+          }
+        },
+        "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sensor should be activated and fully warmed up."
@@ -12669,6 +13155,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sensor Status"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sensor State"
           }
         },
         "es" : {
@@ -12969,6 +13461,12 @@
             "value" : "Stärke"
           }
         },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Strength"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -13110,6 +13608,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Es kann bis zu vier Minuten dauern, bis die Bluetooth-Verbindung hergestellt ist."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The Bluetooth connection will take up to four minutes before it starts working."
           }
         },
         "es" : {
@@ -13255,6 +13759,12 @@
             "value" : "There is no undo. Deleting requires authentication!"
           }
         },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "There is no undo. Deleting requires authentication!"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -13393,6 +13903,12 @@
           }
         },
         "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "To "
+          }
+        },
+        "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "To "
@@ -13703,6 +14219,12 @@
             "value" : " IE"
           }
         },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "U"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -13834,6 +14356,12 @@
           }
         },
         "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Upload to remote data service"
+          }
+        },
+        "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Upload to remote data service"
@@ -14294,6 +14822,12 @@
             "value" : "Valid for footer: "
           }
         },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Valid for footer: "
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -14434,6 +14968,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Wert"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Value"
           }
         },
         "es" : {
@@ -14578,6 +15118,12 @@
             "value" : "View factory calibrations"
           }
         },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "View factory calibrations"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -14716,6 +15262,12 @@
           }
         },
         "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your sensor must be activated and fully warmed up."
+          }
+        },
+        "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Your sensor must be activated and fully warmed up."

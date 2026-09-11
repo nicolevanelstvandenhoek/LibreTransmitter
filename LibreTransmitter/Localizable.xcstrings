@@ -22,6 +22,12 @@
             "value" : "Konnte den Sensorinhalt nicht dekodieren"
           }
         },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Could not decrypt sensor contents"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -163,6 +169,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Konnte keine Path-Info bekommen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Could not get patch info"
           }
         },
         "es" : {
@@ -308,6 +320,12 @@
             "value" : "Konnte keine Sensordaten bekommen"
           }
         },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Could not get sensor data"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -449,6 +467,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Konnte keine Tag-Info bekommen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Could not get tag info"
           }
         },
         "es" : {
@@ -750,6 +774,12 @@
             "value" : "g"
           }
         },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "g"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -890,6 +920,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Halte das Oberteil des Telefons nah an den Sensor um ihn zu koppeln"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hold the top of your iPhone near the sensor to pair"
           }
         },
         "es" : {
@@ -1035,6 +1071,12 @@
             "value" : "mg/dL"
           }
         },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mg/dL"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1173,6 +1215,12 @@
           }
         },
         "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mmol/L"
+          }
+        },
+        "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "mmol/L"
@@ -1639,6 +1687,12 @@
             "value" : "Das NFC des Telefons wird nicht unterstützt"
           }
         },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Phone NFC not supported!"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1782,6 +1836,12 @@
             "value" : " IE"
           }
         },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "U"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1914,6 +1974,12 @@
           }
         },
         "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wrong sensor type detected"
+          }
+        },
+        "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Wrong sensor type detected"
@@ -2060,6 +2126,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dein Telefon oder Deine App ist nicht für die NFC-Kommunikation freigeschaltet, die zum Koppeln mit Libre2-Sensoren erforderlich ist"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your phone or app is not enabled for NFC communications, which is needed to pair to libre2 sensors"
           }
         },
         "es" : {
