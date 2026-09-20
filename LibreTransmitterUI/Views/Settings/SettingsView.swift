@@ -233,7 +233,7 @@ struct SettingsView: View {
         Section {
             Button("Delete CGM") {
                 showingDestructQuestion = true
-            }.foregroundColor(.red)
+            }.foregroundColor(.pink)
             .alert(isPresented: $showingDestructQuestion) {
                 Alert(
                     title: Text(LocalizedString("Are you sure you want to remove this cgm from loop?", comment: "Text describing question to remove the cgmmanager from loop")),

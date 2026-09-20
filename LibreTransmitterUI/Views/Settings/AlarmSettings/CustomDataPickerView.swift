@@ -143,14 +143,14 @@ struct CustomDataPickerView: View {
               restoreAlarmExternalState()
               popView()
 
-            }.accentColor(.red),
+            }.accentColor(.pink),
           trailing:
             Button("Save") {
               print("Save button pressed...")
               verifyRange()
             }
             .disabled(saveButtonDisabled)
-            .accentColor(.red)
+            .accentColor(.pink)
 
         )
       }

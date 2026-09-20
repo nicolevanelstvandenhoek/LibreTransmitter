@@ -33,7 +33,7 @@ struct CriticalAlarmsVolumeView: View {
                     }
                 )
                 Text("\(intVolume)%")
-                    .foregroundColor(isEditing ? .red : .blue)
+                    .foregroundColor(isEditing ? .pink : .blue)
                 
             }
         }
