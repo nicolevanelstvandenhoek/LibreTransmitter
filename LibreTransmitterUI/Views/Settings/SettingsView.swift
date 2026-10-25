@@ -443,9 +443,9 @@ struct SettingsView: View {
             }
             if sensorIsExpired {
                 VStack(alignment: .leading, spacing: 4) {
-                    Text("Sensor is expired")
+                    Text(LocalizedString("Sensor is expired", comment: ""))
                         .font(Font.subheadline.weight(.bold))
-                    Text("Replace sensor immediately to continue receving glucose values")
+                    Text(LocalizedString("Replace sensor immediately to continue receving glucose values", comment: ""))
                         .font(Font.footnote.weight(.semibold))
                 }.padding(.vertical, 8)
             } else if !["Notifying", "Connected"].contains(transmitterInfo.connectionState) || !showProgress {

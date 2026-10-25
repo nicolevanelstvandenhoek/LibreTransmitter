@@ -23,7 +23,7 @@ struct CriticalAlarmsVolumeView: View {
     
     var body: some View {
         List {
-            Section(header: Text("Critical alarm volume"), footer: Text("Critical alarms will always be sent with volume at minimum 60%")) {
+            Section(header: Text(LocalizedString("Critical alarm volume", comment: "")), footer: Text(LocalizedString("Critical alarms will always be sent with volume at minimum 60%", comment: ""))) {
                 Slider(
                     value: $mmCriticalAlarmsVolume,
                     in: 60...100,
