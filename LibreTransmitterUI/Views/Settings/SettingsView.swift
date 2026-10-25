@@ -36,7 +36,7 @@ public struct SettingsItem: View {
 
     public var body: some View {
         HStack {
-            Text(title)
+            Text(LocalizedString(title, comment: "Settings row title"))
             if !detail.isEmpty {
                 Spacer()
                 Text(detail).font(.subheadline)

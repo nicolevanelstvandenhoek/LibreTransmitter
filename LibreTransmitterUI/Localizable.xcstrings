@@ -1407,6 +1407,17 @@
         }
       }
     },
+    "Alarms" : {
+      "comment" : "Settings row title",
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alarmen"
+          }
+        }
+      }
+    },
     "Always Notify Glucose" : {
       "comment" : "Text describing always notify glucose option in notificationsettingsview",
       "localizations" : {
@@ -2420,6 +2431,17 @@
         }
       }
     },
+    "Battery" : {
+      "comment" : "Settings row title",
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Batterij"
+          }
+        }
+      }
+    },
     "Bluetooth Transmitters" : {
       "comment" : "Bluetooth Transmitter connection option",
       "localizations" : {
@@ -3008,6 +3030,17 @@
         }
       }
     },
+    "Change Sensor" : {
+      "comment" : "Settings row title",
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sensor vervangen"
+          }
+        }
+      }
+    },
     "Click to Snooze Alerts" : {
       "comment" : "Text describing click to snooze label in snoozeview",
       "localizations" : {
@@ -3437,6 +3470,17 @@
         }
       }
     },
+    "Connection State" : {
+      "comment" : "Settings row title",
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verbindingsstatus"
+          }
+        }
+      }
+    },
     "Credentials" : {
       "comment" : "Title of cell to set credentials",
       "extractionState" : "manual",
@@ -3735,6 +3779,17 @@
         }
       }
     },
+    "Critical Alarms volume" : {
+      "comment" : "Settings row title",
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Volume kritieke alarmen"
+          }
+        }
+      }
+    },
     "Critical alarms will always be sent with volume at minimum 60%" : {
       "localizations" : {
         "ar" : {
@@ -3873,6 +3928,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "严重警报将始终以至少 60% 的音量发出。"
+          }
+        }
+      }
+    },
+    "CurrentBG" : {
+      "comment" : "Settings row title",
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Huidige glucose"
           }
         }
       }
@@ -4754,6 +4820,17 @@
         }
       }
     },
+    "Device details" : {
+      "comment" : "Settings row title",
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apparaatgegevens"
+          }
+        }
+      }
+    },
     "Device Info" : {
       "comment" : "Text describing header for device info section",
       "localizations" : {
@@ -5606,6 +5683,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Fair warning: The sensor will be not be using the manufacturer's algorithm, and some safety mitigations present in the manufacturers algorithm might be missing when you use this."
+          }
+        }
+      }
+    },
+    "Firmware" : {
+      "comment" : "Settings row title",
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Firmware"
           }
         }
       }
@@ -6487,6 +6575,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "知道了"
+          }
+        }
+      }
+    },
+    "Hardware" : {
+      "comment" : "Settings row title",
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hardware"
           }
         }
       }
@@ -8360,6 +8459,17 @@
         }
       }
     },
+    "Mac" : {
+      "comment" : "Settings row title",
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MAC-adres"
+          }
+        }
+      }
+    },
     "mg/dL" : {
       "comment" : "The short unit display string for milligrams of glucose per decilter",
       "localizations" : {
@@ -9498,6 +9608,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "通知"
+          }
+        }
+      }
+    },
+    "Notifications" : {
+      "comment" : "Settings row title",
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Meldingen"
           }
         }
       }
@@ -11813,6 +11934,17 @@
         }
       }
     },
+    "Sensor End" : {
+      "comment" : "Settings row title",
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Einde sensor"
+          }
+        }
+      }
+    },
     "Sensor expires in " : {
       "comment" : "Text describing sensor expires in label in settingsview",
       "localizations" : {
@@ -12094,6 +12226,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "传感器即将过期"
+          }
+        }
+      }
+    },
+    "Sensor Footer checksum" : {
+      "comment" : "Settings row title",
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Controlesom sensorvoettekst"
           }
         }
       }
@@ -12668,6 +12811,17 @@
         }
       }
     },
+    "Sensor Start" : {
+      "comment" : "Settings row title",
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Start sensor"
+          }
+        }
+      }
+    },
     "Sensor State" : {
       "comment" : "Text describing Sensor state label in settingsview",
       "localizations" : {
@@ -12807,6 +12961,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "传感器状态"
+          }
+        }
+      }
+    },
+    "Sensor Type" : {
+      "comment" : "Settings row title",
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sensortype"
           }
         }
       }
@@ -13534,6 +13699,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "To "
+          }
+        }
+      }
+    },
+    "Transmitter Type" : {
+      "comment" : "Settings row title",
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Type zender"
           }
         }
       }
