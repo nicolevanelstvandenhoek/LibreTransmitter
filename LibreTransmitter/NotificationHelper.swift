@@ -6,10 +6,7 @@
 //  Copyright © 2019 LoopKit Authors. All rights reserved.
 //
 
-import AudioToolbox
 import Foundation
-import HealthKit
-import LoopKit
 import UserNotifications
 import os.log
 
@@ -18,9 +15,7 @@ private var logger = Logger(forType: "NotificationHelper")
 public enum NotificationHelper {
 
     private enum Identifiers: String {
-        case glucocoseNotifications = "com.loopkit.libremiaomiao.glucose-notification"
         case noSensorDetected = "com.loopkit.libremiaomiao.nosensordetected-notification"
-        case tryAgainLater = "com.loopkit.libremiaomiao.glucoseNotAvailableTryAgainLater-notification"
         case sensorChange = "com.loopkit.libremiaomiao.sensorchange-notification"
         case invalidSensor = "com.loopkit.libremiaomiao.invalidsensor-notification"
         case lowBattery = "com.loopkit.libremiaomiao.lowbattery-notification"
@@ -31,67 +26,6 @@ public enum NotificationHelper {
         case libre2directFinishedSetup = "com.loopkit.libremiaomiao.libre2direct-notification"
     }
     
-    public static var shouldRequestCriticalPermissions = false
-    
-    // don't touch this please
-    public static var criticalAlarmsEnabled = false
-
-    
-
-    private static func vibrate(times: Int=3) {
-        guard times >= 0 else {
-            return
-        }
-        
-
-        AudioServicesPlaySystemSoundWithCompletion(kSystemSoundID_Vibrate) {
-            vibrate(times: times - 1)
-        }
-    }
-
-    public static func GlucoseUnitIsSupported(unit: HKUnit) -> Bool {
-        [HKUnit.milligramsPerDeciliter, HKUnit.millimolesPerLiter].contains(unit)
-    }
-
-    private static func requestCriticalNotificationPermissions() {
-        logger.debug("\(#function) called")
-        let center = UNUserNotificationCenter.current()
-        center.requestAuthorization(options: [.badge, .sound, .alert, .criticalAlert]) { (granted, error) in
-            if granted {
-                logger.debug("\(#function) was granted")
-                UNUserNotificationCenter.current().getNotificationSettings { settings in
-                    logPermissions(settings)
-                    criticalAlarmsEnabled = settings.criticalAlertSetting == .enabled
-                }
-            } else {
-                logger.debug("\(#function) failed because of error: \(String(describing: error))")
-            }
-
-        }
-
-    }
-    
-    private static func logPermissions(_ settings: UNNotificationSettings, caller: String = #function) {
-        
-        logger.debug("\(caller): alarms allowed: \(String(describing:settings.authorizationStatus)). Critical alarms allowed? \(String(describing:settings.criticalAlertSetting))")
-        
-    }
-
-    public static func requestNotificationPermissionsIfNeeded() {
-        // We assume loop will request necessary "non-critical" permissions for us
-        // So we are only interested in the "critical" permissions here
-        
-        UNUserNotificationCenter.current().getNotificationSettings { settings in
-            criticalAlarmsEnabled = settings.criticalAlertSetting == .enabled
-            logPermissions(settings)
-            
-            if shouldRequestCriticalPermissions || NotificationHelperOverride.shouldOverrideRequestCriticalPermissions {
-                requestCriticalNotificationPermissions()
-            }
-            
-        }
-    }
-
     private static func ensureCanSendNotification(_ completion: @escaping () -> Void ) {
         UNUserNotificationCenter.current().getNotificationSettings { settings in
             guard settings.authorizationStatus == .authorized || settings.authorizationStatus == .provisional else {
@@ -104,20 +38,9 @@ public enum NotificationHelper {
         }
     }
 
-    private static func addRequest(identifier: Identifiers, content: UNMutableNotificationContent, deleteOld: Bool = false, isCritical: Bool = false) {
+    private static func addRequest(identifier: Identifiers, content: UNMutableNotificationContent, deleteOld: Bool = false) {
         let center = UNUserNotificationCenter.current()
-        
-        if isCritical && Self.criticalAlarmsEnabled {
-            logger.debug("\(#function) critical alarm created")
-            content.interruptionLevel =   .critical
-            
-            let criticalVolume = UserDefaults.standard.mmCriticalAlarmsVolume < 60 ? 60 : UserDefaults.standard.mmCriticalAlarmsVolume
-            logger.debug("\(#function) setting criticalVolume to \(criticalVolume)%")
-            content.sound = .defaultCriticalSound(withAudioVolume: Float(criticalVolume / 100))
-        } else {
-            logger.debug("\(#function) timesensitive alarm created")
-            content.interruptionLevel = .timeSensitive
-        }
+        content.interruptionLevel = .timeSensitive
         
         let request = UNNotificationRequest(identifier: identifier.rawValue, content: content, trigger: nil)
 
@@ -190,18 +113,6 @@ public extension NotificationHelper {
         }
     }
 
-    static func sendSensorTryAgainLaterNotification() {
-        ensureCanSendNotification {
-            let content = UNMutableNotificationContent()
-            content.title = "Invalid Glucose sample detected, try again later"
-            content.body = "Sensor might have temporarily stopped, fallen off or is too cold or too warm"
-
-            addRequest(identifier: .tryAgainLater, content: content)
-            // content.sound = UNNotificationSound.
-
-        }
-    }
-
     static func sendInvalidSensorNotificationIfNeeded(sensorData: SensorData) {
         let isValid = sensorData.isLikelyLibre1FRAM && (sensorData.state == .starting || sensorData.state == .ready)
 
@@ -214,8 +125,6 @@ public extension NotificationHelper {
     }
 
     enum CalibrationMessage: String {
-        case starting = "Calibrating sensor, please stand by!"
-        case noCalibration = "Could not calibrate sensor, check libreoopweb permissions and internet connection"
         case invalidCalibrationData = "Could not calibrate sensor, invalid calibrationdata"
         case success = "Success!"
     }
@@ -295,7 +204,7 @@ public extension NotificationHelper {
             content.title = "Sensor Ending Soon"
             content.body = "Current Sensor is Ending soon! Sensor Life left in \(dynamicText)"
 
-            addRequest(identifier: .sensorExpire, content: content, deleteOld: true, isCritical: true)
+            addRequest(identifier: .sensorExpire, content: content, deleteOld: true)
         }
     }
 }
@@ -332,117 +241,6 @@ public extension NotificationHelper {
 
             addRequest(identifier: .invalidChecksum, content: content)
         }
-    }
-
-    private static var glucoseNotifyCalledCount = 0
-
-    static func sendGlucoseNotificationIfNeeded(glucose: LibreGlucose, oldValue: LibreGlucose?, trend: GlucoseTrend?, battery: String?, glucoseFormatter: QuantityFormatter) {
-        glucoseNotifyCalledCount &+= 1
-
-        let shouldSendGlucoseAlternatingTimes = glucoseNotifyCalledCount != 0 && UserDefaults.standard.mmNotifyEveryXTimes != 0
-
-        let shouldSend = UserDefaults.standard.mmAlwaysDisplayGlucose ||
-            (shouldSendGlucoseAlternatingTimes && glucoseNotifyCalledCount % UserDefaults.standard.mmNotifyEveryXTimes == 0)
-
-        let schedules = UserDefaults.standard.glucoseSchedules
-
-        let alarm = schedules?.getActiveAlarms(glucose.glucoseDouble) ?? .none
-        let isSnoozed = GlucoseScheduleList.isSnoozed()
-
-        let shouldShowPhoneBattery = UserDefaults.standard.mmShowPhoneBattery
-        let transmitterBattery = UserDefaults.standard.mmShowTransmitterBattery && battery != nil ? battery : nil
-
-        logger.debug("\(#function) glucose alarmtype is \(String(describing: alarm))")
-        // We always send glucose notifications when alarm is active,
-        // even if glucose notifications are disabled in the UI
-
-        if shouldSend || alarm.isAlarming() {
-            sendGlucoseNotification(glucose: glucose, oldValue: oldValue,
-                                    glucoseFormatter: glucoseFormatter,
-                                    alarm: alarm, isSnoozed: isSnoozed,
-                                    trend: trend, showPhoneBattery: shouldShowPhoneBattery,
-                                    transmitterBattery: transmitterBattery)
-        } else {
-            logger.debug("\(#function) not sending glucose, shouldSend and alarmIsActive was false")
-            return
-        }
-    }
-
-    private static func sendGlucoseNotification(glucose: LibreGlucose, oldValue: LibreGlucose?,
-                                                glucoseFormatter: QuantityFormatter,
-                                                alarm: GlucoseScheduleAlarmResult = .none,
-                                                isSnoozed: Bool = false,
-                                                trend: GlucoseTrend?,
-                                                showPhoneBattery: Bool = false,
-                                                transmitterBattery: String?) {
-        let content = UNMutableNotificationContent()
-        let glucoseDesc = glucoseFormatter.string(from: glucose.quantity)!
-        var titles = [String]()
-        var body = [String]()
-        var body2 = [String]()
-
-        var isCritical = false
-        switch alarm {
-        case .none:
-            titles.append("Glucose")
-        case .low:
-            titles.append("LOWALERT!")
-            isCritical = true
-        case .high:
-            titles.append("HIGHALERT!")
-            isCritical = true
-        }
-
-        if isSnoozed {
-            titles.append("(Snoozed)")
-        } else if alarm.isAlarming() {
-            content.sound = .default
-            
-            if Features.glucoseAlarmsAlsoCauseVibration {
-                vibrate()
-            }
-            
-        }
-        titles.append(glucoseDesc)
-
-        body.append("Glucose: \(glucoseDesc)")
-
-        if let oldValue {
-            let diff = glucose.glucoseDouble - oldValue.glucoseDouble
-            if diff >= 0 {
-                body.append("+")
-            }
-            body.append( glucoseFormatter.string(from: HKQuantity(unit: .milligramsPerDeciliter, doubleValue: diff))!)
-        }
-
-        if let trend = trend?.localizedDescription {
-            body.append("\(trend)")
-        }
-
-        if showPhoneBattery {
-            if !UIDevice.current.isBatteryMonitoringEnabled {
-                UIDevice.current.isBatteryMonitoringEnabled = true
-            }
-
-            let battery = Double(UIDevice.current.batteryLevel * 100 ).roundTo(places: 1)
-            body2.append("Phone: \(battery)%")
-        }
-
-        if let transmitterBattery {
-            body2.append("Transmitter: \(transmitterBattery)")
-        }
-
-        // these are texts that naturally fit on their own line in the body
-        var body2s = ""
-        if !body2.isEmpty {
-            body2s = "\n" + body2.joined(separator: "\n")
-        }
-
-        content.title = titles.joined(separator: " ")
-        content.body = body.joined(separator: ", ") + body2s
-        addRequest(identifier: .glucocoseNotifications,
-                   content: content,
-                   deleteOld: true, isCritical: isCritical && !isSnoozed)
     }
 
     private static var lastBatteryWarning: Date?

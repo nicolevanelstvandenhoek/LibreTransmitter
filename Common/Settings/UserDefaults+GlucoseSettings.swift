@@ -7,13 +7,12 @@
 //
 
 import Foundation
-import HealthKit
 
 extension UserDefaults {
     private enum Key: String {
         case mmSyncToNS = "com.loopkit.libreSyncToNs"
         case mmBackfillFromHistory = "com.loopkit.libreBackfillFromHistory"
-       
+        case glucoseSmoothingEnabled = "com.loopkit.libreGlucoseSmoothingEnabled"
     }
 
     var mmSyncToNs: Bool {
@@ -31,6 +30,15 @@ extension UserDefaults {
         }
         set {
             set(newValue, forKey: Key.mmBackfillFromHistory.rawValue)
+        }
+    }
+
+    var glucoseSmoothingEnabled: Bool {
+        get {
+            optionalBool(forKey: Key.glucoseSmoothingEnabled.rawValue) ?? true
+        }
+        set {
+            set(newValue, forKey: Key.glucoseSmoothingEnabled.rawValue)
         }
     }
 

@@ -8,7 +8,6 @@
 import SwiftUI
 import LoopKit
 import LoopKitUI
-import HealthKit
 import LibreTransmitter
 import Combine
 
@@ -18,7 +17,7 @@ struct LibreLifecycleProgress: DeviceLifecycleProgress {
     var progressState: LoopKit.DeviceLifecycleProgressState
 }
 
-extension LibreTransmitterManagerV3: CGMManagerUI {
+extension LibreTransmitterManagerV3: @retroactive CGMManagerUI {
 
     public var cgmStatusBadge: DeviceStatusBadge? {
         nil
@@ -49,7 +48,6 @@ extension LibreTransmitterManagerV3: CGMManagerUI {
             notifyDelete: wantToTerminateNotifier,
             notifyReset: wantToResetCGMManagerNotifier,
             notifyReconnect:wantToRestablishConnectionNotifier,
-            alarmStatus: self.alarmStatus,
             pairingService: self.pairingService,
             bluetoothSearcher: self.bluetoothSearcher
         )
@@ -126,9 +124,13 @@ extension LibreTransmitterManagerV3: CGMManagerUI {
     }
 }
 
-extension LibreTransmitterManagerV3: DeviceManagerUI {
+extension LibreTransmitterManagerV3: @retroactive DeviceManagerUI {
     public static var onboardingImage: UIImage? {
         nil
+    }
+
+    public static var pickerImage: UIImage? {
+        UIImage(named: "libresensor200", in: Bundle.current, compatibleWith: nil)
     }
 
     public var smallImage: UIImage? {

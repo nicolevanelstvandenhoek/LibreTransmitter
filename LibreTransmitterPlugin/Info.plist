@@ -23,8 +23,12 @@
 	<key>NSPrincipalClass</key>
 	<string>LibreTransmitterPlugin</string>
 	<key>com.loopkit.Loop.CGMManagerDisplayName</key>
-	<string>FreeStyle Libre</string>
+	<string>FreeStyle Libre 1 / 2 / 2+</string>
 	<key>com.loopkit.Loop.CGMManagerIdentifier</key>
 	<string>LibreTransmitterManagerV3</string>
+	<key>com.loopkit.Loop.DeviceManufacturer</key>
+	<string>Abbott</string>
+	<key>com.loopkit.Loop.PluginSubtitle</key>
+	<string>Libre 1 via MiaoMiao or Bubble, EU Libre 2 direct</string>
 </dict>
 </plist>

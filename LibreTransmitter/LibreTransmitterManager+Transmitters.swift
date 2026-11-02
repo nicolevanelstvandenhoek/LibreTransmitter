@@ -104,14 +104,14 @@ extension LibreTransmitterManagerV3 {
             
             // But since Loop only supports 1 glucose reading
             // every 5 minutes, we remove all readings except the newest
-            if let newest = trends.first {
+            if let newest = trends.last {
                 trends = [newest]
             }
             
             // Historical readings have a spacing of 15 minutes between them,
             // trend arrow calculation doesn't make that much sense
             if let historical = glucoseArrayWithPrediction?.historical {
-                let historical2 = self.glucosesToSamplesFilter(historical, startDate: self.getStartDateForFilter(), calculateTrends: false)
+                let historical2 = self.glucosesToSamplesFilter(historical, startDate: self.getStartDateForFilter(), calculateTrends: false, isBackfill: true)
                 if !historical.isEmpty {
                     newGlucoses = historical2
                 }

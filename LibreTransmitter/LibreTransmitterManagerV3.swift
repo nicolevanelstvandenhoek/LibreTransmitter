@@ -5,6 +5,7 @@
 //
 
 import Foundation
+import LoopAlgorithm
 import LoopKit
 import LoopKitUI
 import UIKit
@@ -12,23 +13,19 @@ import UserNotifications
 import Combine
 
 import CoreBluetooth
-import HealthKit
 import os.log
 
 open class LibreTransmitterManagerV3: CGMManager, LibreTransmitterDelegate {
+    public var inSignalLoss: Bool = false
     
-    
-
-    
-   
-    
+    public var isInoperable: Bool {
+        cgmManagerStatus.isInoperable
+    }
 
     public typealias GlucoseArrayWithPrediction = (trends: [LibreGlucose], historical: [LibreGlucose], prediction: [LibreGlucose])
     public lazy var logger = Logger(forType: Self.self)
 
     public let isOnboarded = true   // No distinction between created and onboarded
-
-    private var alertsUnitPreference = DisplayGlucosePreference(displayGlucoseUnit: .milligramsPerDeciliter)
 
     public var hasValidSensorSession: Bool {
         lastConnected != nil
@@ -172,8 +169,6 @@ open class LibreTransmitterManagerV3: CGMManager, LibreTransmitterDelegate {
 
     public var lastConnected: Date?
 
-    public internal(set) var alarmStatus = AlarmStatus()
-
     internal var latestPrediction: LibreGlucose?
 
     public var latestBackfill: LibreGlucose? {
@@ -184,29 +179,6 @@ open class LibreTransmitterManagerV3: CGMManager, LibreTransmitterDelegate {
 
             var trend: GlucoseTrend?
             let oldValue = latestBackfill
-
-            defer {
-                logger.debug("sending glucose notification")
-                NotificationHelper.sendGlucoseNotificationIfNeeded(glucose: newValue,
-                                                                   oldValue: oldValue,
-                                                                   trend: trend,
-                                                                   battery: proxy?.metadata?.batteryString ?? "n/a",
-                                                                   glucoseFormatter: alertsUnitPreference.formatter)
-
-                // once we have a new glucose value, we can update the isalarming property
-                if let activeAlarms = UserDefaults.standard.glucoseSchedules?.getActiveAlarms(newValue.glucoseDouble) {
-                    DispatchQueue.main.async {
-                        self.alarmStatus.isAlarming = ([.high, .low].contains(activeAlarms))
-                        self.alarmStatus.glucoseScheduleAlarmResult = activeAlarms
-                    }
-                } else {
-                    DispatchQueue.main.async {
-                    self.alarmStatus.isAlarming = false
-                    self.alarmStatus.glucoseScheduleAlarmResult = .none
-                    }
-                }
-
-            }
 
             logger.debug("latestBackfill set, newvalue is \(newValue.glucose)")
 
@@ -219,7 +191,7 @@ open class LibreTransmitterManagerV3: CGMManager, LibreTransmitterDelegate {
 
                 trend = oldIsRecentEnough ? newValue.GetGlucoseTrend(last: oldValue) : nil
 
-                self.glucoseDisplay = ConcreteGlucoseDisplayable(isStateValid: newValue.isStateValid, trendType: trend, isLocal: true)
+                self.glucoseDisplay = ConcreteGlucoseDisplayable(isStateValid: newValue.isStateValid, trendType: trend, isLocal: true, trendRate: nil)
             } else {
                 // could consider setting this to ConcreteSensorDisplayable with trendtype GlucoseTrend.flat, but that would be kinda lying
                 self.glucoseDisplay = nil
@@ -228,7 +200,7 @@ open class LibreTransmitterManagerV3: CGMManager, LibreTransmitterDelegate {
 
     }
 
-    static public let pluginIdentifier: String = "LibreTransmitterManagerV3"
+    public let pluginIdentifier: String = "LibreTransmitterManagerV3"
 
     public required convenience init?(rawState: CGMManager.RawStateValue) {
 
@@ -241,11 +213,13 @@ open class LibreTransmitterManagerV3: CGMManager, LibreTransmitterDelegate {
         [:]
     }
 
-    open var localizedTitle: String { "FreeStyle Libre" }
+    open var localizedTitle: String { "FreeStyle Libre 1 / 2 / 2+" }
 
     public let appURL: URL? = nil // URL(string: "spikeapp://")
 
     public let providesBLEHeartbeat = true
+    public let providesOwnGlucoseAlerts = false
+
     public var shouldSyncToRemoteService: Bool {
         UserDefaults.standard.mmSyncToNs
     }
@@ -254,7 +228,6 @@ open class LibreTransmitterManagerV3: CGMManager, LibreTransmitterDelegate {
         lastConnected = nil
 
         logger.debug("LibreTransmitterManager will be created now")
-        NotificationHelper.requestNotificationPermissionsIfNeeded()
 
         if isDeviceSelected {
             establishProxy()
@@ -499,24 +472,29 @@ extension LibreTransmitterManagerV3 {
         return startDate?.addingTimeInterval(1)
     }
 
-    func glucosesToSamplesFilter(_ array: [LibreGlucose], startDate: Date?, calculateTrends: Bool = true) -> [NewGlucoseSample] {
-        let glucoses = array.filter { $0.isStateValid }
-        
-        let newest = glucoses.first
-        let oldest = glucoses.last
-        
-        var trend: GlucoseTrend?
-        
-        if calculateTrends, let newest, let oldest, oldest != newest {
-            trend = newest.GetGlucoseTrend(last: oldest)
-            logger.debug("creating trendarrow from glucoses: newest: \(String(describing:newest)) oldest: \(String(describing: oldest)) ")
-        } else {
-            logger.debug("Not creating trendarrow for remote uploada")
-            trend = .none
+    func glucosesToSamplesFilter(_ array: [LibreGlucose], startDate: Date?, calculateTrends: Bool = true, isBackfill: Bool = false) -> [NewGlucoseSample] {
+        let glucoses = array
+            .filter { $0.isStateValid }
+            .sorted { $0.startDate > $1.startDate }
+
+        let trendCalculation = calculateTrends ? LibreGlucose.calculateRecentTrend(in: glucoses) : nil
+        let trend = trendCalculation?.trend
+        let trendRate = trendCalculation.map {
+            LoopQuantity(unit: .milligramsPerDeciliterPerMinute, doubleValue: $0.rate)
         }
-        logger.debug("tried creating trendarrow using \(glucoses.count) elements for trend calc")
-        
+
+        if !calculateTrends {
+            logger.debug("trend arrow calculation disabled for these samples")
+        } else if let trendCalculation {
+            logger.debug("created trend arrow \(trendCalculation.trend.symbol) at \(trendCalculation.rate) mg/dL/min using recent processed glucose")
+        } else {
+            logger.debug("not creating trend arrow because no valid 4-6 minute comparison is available")
+        }
+
         return glucoses
+            // filterDateRange uses a binary search that requires ascending order;
+            // these glucoses are newest-first, so sort before filtering.
+            .sorted { $0.startDate < $1.startDate }
             .filterDateRange(startDate, nil)
             .compactMap {
                 return NewGlucoseSample(
@@ -524,11 +502,12 @@ extension LibreTransmitterManagerV3 {
                     quantity: $0.quantity,
                     condition: nil,
                     trend: trend,
-                    trendRate: nil,
+                    trendRate: trendRate,
                     isDisplayOnly: false,
                     wasUserEntered: false,
                     syncIdentifier: $0.syncId,
-                    device: self.proxy?.device)
+                    device: self.proxy?.device,
+                    isBackfill: isBackfill)
             }
     }
 
@@ -543,7 +522,6 @@ extension LibreTransmitterManagerV3 {
 
 
 extension LibreTransmitterManagerV3: DisplayGlucoseUnitObserver {
-    public func unitDidChange(to displayGlucoseUnit: HKUnit) {
-        self.alertsUnitPreference.unitDidChange(to: displayGlucoseUnit)
+    public func unitDidChange(to displayGlucoseUnit: LoopUnit) {
     }
 }
